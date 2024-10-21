@@ -1,66 +1,90 @@
-body,
-#root {
-  margin: 0;
-  padding: 0;
-  height: 100vh;
-  width: 100vw;
-  font-family: Arial, sans-serif;
-}
-
 .App {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  min-height: 100vh;
+  text-align: center;
   padding: 20px;
-  box-sizing: border-box;
-  background-color: #f0f0f0;
-  color: #333;
-  transition: background-color 0.3s, color 0.3s;
+  min-height: 100vh;
+  transition: all 0.3s ease;
 }
 
-.App.dark-mode {
-  background-color: #333;
-  color: #fff;
+.light-mode {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.dark-mode {
+  background-color: #333333;
+  color: #ffffff;
 }
 
 .todo-list {
   list-style-type: none;
   padding: 0;
-  width: 100%;
   max-width: 600px;
+  margin: 0 auto;
 }
 
 .todo-item {
-  background-color: #fff;
-  color: #333;
-  margin-bottom: 10px;
+  background-color: #f0f0f0;
+  margin: 10px auto;
   padding: 15px;
   border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
 
 .dark-mode .todo-item {
-  background-color: #555;
-  color: #fff;
+  background-color: #555555;
+}
+
+.todo-item.done {
+  background-color: #e0ffe0;
+}
+
+.dark-mode .todo-item.done {
+  background-color: #2a5a2a;
+}
+
+.todo-content {
+  text-align: left;
+  flex-grow: 1;
+  margin-right: 15px;
 }
 
 button {
   padding: 10px 15px;
-  margin-bottom: 20px;
-  cursor: pointer;
-  background-color: #4caf50;
-  color: white;
   border: none;
-  border-radius: 4px;
-  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  white-space: nowrap;
 }
 
-button:hover {
-  background-color: #45a049;
+.dark-mode button {
+  background-color: #666666;
+  color: #ffffff;
 }
 
-h1 {
-  margin-bottom: 20px;
+.dark-mode button:hover {
+  background-color: #888888;
+}
+
+@media (max-width: 650px) {
+  .todo-list {
+    width: 90%;
+  }
+
+  .todo-item {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .todo-content {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  button {
+    align-self: flex-end;
+  }
 }

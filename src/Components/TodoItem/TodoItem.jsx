@@ -1,13 +1,11 @@
 import React from "react";
 
-const TodoItem = ({ todo, toggleDone }) => {
+// TODO: Add a prop to handle the 'done' status of a todo item
+const TodoItem = ({ todo }) => {
   // TODO: Add 'done' property to todo object in dummy data
   // TODO: Change background color based on 'done' status
   return (
-    <li
-      className={`todo-item ${todo.done ? "done" : ""}`}
-      onClick={() => toggleDone(todo.id)}
-    >
+    <li className={`todo-item ${todo.done ? "done" : ""}`}>
       <h3>{todo.title}</h3>
       <p>{todo.description}</p>
       <p>Deadline: {todo.deadline}</p>
