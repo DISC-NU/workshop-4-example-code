@@ -8,22 +8,32 @@ import TodoItem from "./Components/TodoItem/TodoItem";
 // Created by Amy Liao & Ethan Pineda
 
 const App = () => {
-  const [darkMode, setDarkMode] = useState(true);
-  const [todos] = useState([...dummyTodos]);
+  const [darkMode, setDarkMode] = useState(false);
+  const [todos, setTodos] = useState([...dummyTodos]);
 
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
   };
 
+  const toggleDone = (id) => {
+    setTodos(
+      todos.map((todo) =>
+        todo.id === id ? { ...todo, done: !todo.done } : todo
+      )
+    );
+  };
+
   return (
-    <div className={`App ${darkMode ? "dark-mode" : ""}`}>
+    <div className={`App ${darkMode ? "dark-mode" : "light-mode"}`}>
       <h1>Todo List App</h1>
+      <h2>My Tasks for Today</h2>
+
       <button onClick={toggleDarkMode}>
         {darkMode ? "Light Mode" : "Dark Mode"}
       </button>
       <ul className="todo-list">
         {todos.map((todo) => (
-          <TodoItem key={todo.id} todo={todo} />
+          <TodoItem key={todo.id} todo={todo} toggleDone={toggleDone} />
         ))}
       </ul>
     </div>
