@@ -3,6 +3,10 @@ import { dummyTodos } from "./data/dummy-data";
 import "./App.css";
 import TodoItem from "./Components/TodoItem/TodoItem";
 
+// Northwestern University DISC Fall Workshop Series 2024
+// Workshop 4: Introduction to JavaScript, React, and JSX
+// Created by Amy Liao & Ethan Pineda
+
 const App = () => {
   const [darkMode, setDarkMode] = useState(true);
   const [todos] = useState([...dummyTodos]);
