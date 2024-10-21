@@ -1,3 +1,4 @@
+// TODO: Add done property to each todo object
 export const dummyTodos = [
   { title: "Wash dishes", description: "Clean the dishes", deadline: "1500" },
   {

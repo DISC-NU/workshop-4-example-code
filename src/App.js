@@ -11,15 +11,25 @@ const App = () => {
     setDarkMode(!darkMode);
   };
 
+  // TODO: Add a function to toggle the 'done' status of a todo item
+
   return (
     <div className={`App ${darkMode ? "dark-mode" : ""}`}>
       <h1>Todo List App</h1>
+
+      {/* TODO: Add a title or button here */}
+
       <button onClick={toggleDarkMode}>
         {darkMode ? "Light Mode" : "Dark Mode"}
       </button>
+      {/* TODO: Change color of foreground text based on dark mode */}
       <ul className="todo-list">
         {todos.map((todo) => (
-          <TodoItem key={todo.id} todo={todo} />
+          <TodoItem
+            key={todo.id}
+            todo={todo}
+            // TODO: Pass your handler to toggle the 'done' status of a todo item here as a prop to the TodoItem component
+          />
         ))}
       </ul>
     </div>

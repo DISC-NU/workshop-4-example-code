@@ -1,6 +1,8 @@
 import React from "react";
 
 const TodoItem = ({ todo, toggleDone }) => {
+  // TODO: Add 'done' property to todo object in dummy data
+  // TODO: Change background color based on 'done' status
   return (
     <li
       className={`todo-item ${todo.done ? "done" : ""}`}
