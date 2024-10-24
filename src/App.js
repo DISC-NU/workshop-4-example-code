@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { dummyTodos } from "./data/dummy-data";
 import "./App.css";
 import TodoItem from "./Components/TodoItem/TodoItem";
@@ -10,6 +10,10 @@ const App = () => {
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
   };
+
+  useEffect(() => {
+    console.log("useEffect called");
+  }, [darkMode]);
 
   // TODO: Add a function to toggle the 'done' status of a todo item
 
