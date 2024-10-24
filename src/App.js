@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { dummyTodos } from "./data/dummy-data";
 import "./App.css";
 import TodoItem from "./Components/TodoItem/TodoItem";
@@ -22,6 +22,10 @@ const App = () => {
       )
     );
   };
+
+  useEffect(() => {
+    console.log("State of dakrMode has changed");
+  }, [darkMode]);
 
   return (
     <div className={`App ${darkMode ? "dark-mode" : "light-mode"}`}>
